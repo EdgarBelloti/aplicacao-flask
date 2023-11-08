@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>Cadastrar Funcionário</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cadastrar  Funcionário</h1>
+         {% if mensagem %}
+            <div class="alert alert-success">{{ mensagem }}</div>
+        {% endif %}
+    <form method="post" action="/funcionarios">
+            <label for="primeiro_nome">Primeiro Nome:</label>
+            <input type="text" name="primeiro_nome" id="primeiro_nome" required><br>
+
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text" name="sobrenome" id="sobrenome" required><br>
+
+
+                <label for="data_admissao">Data de Admissão:</label>
+        <input type="date" name="data_admissao" id="data_admissao" required><br>
+
+        <label for="status_funcionario">Status do Funcionário:</label>
+        <select name="status_funcionario" id="status_funcionario" required>
+            <option value="1">Ativo</option>
+            <option value="0">Inativo</option>
+        </select><br>
+
+        <label for="id_setor">Setor:</label>
+        <select name="id_setor" id="id_setor" required>
+            <option value="1">Vendas</option>
+            <option value="2">TI</option>
+            <option value="3">Administrativo</option>
+        </select><br>
+
+        <label for="id_cargo">Cargo:</label>
+        <select name="id_cargo" id="id_cargo" required>
+            <option value="1">Vendedor</option>
+            <option value="2">Engenheiro de Software</option>
+            <option value="3">Recursos Humanos</option>
+        </select><br>
+
+        <input type="submit" value="Cadastrar Funcionário">
+    </form>
+    </div>
+
+</body>
+</html>

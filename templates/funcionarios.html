@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Funcionários</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Lista de Funcionários</h1>
+    <ul>
+        {% for funcionario in funcionarios %}
+            <li>{{ funcionario.primeiro_nome }} {{ funcionario.sobrenome }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
